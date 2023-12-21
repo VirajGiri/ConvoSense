@@ -1,0 +1,15 @@
+<div class="input-container">
+    <div class="attachment-container">
+      <input type="file" id="fileInput" (change)="onFileSelected($event)" />
+      <label for="fileInput">
+        <i class="material-icons">attach_file</i>
+      </label>
+    </div>
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <div class="voice-container">
+      <i class="material-icons">mic</i>
+    </div>
+    <button (click)="sendMessage()">
+      <i class="material-icons">send</i>
+    </button>
+  </div>

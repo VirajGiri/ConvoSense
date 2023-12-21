@@ -1,0 +1,8 @@
+<!-- message-list.component.html -->
+<div *ngFor="let message of messages" class="message-container">
+    <div [ngClass]="{'message sender': message.sender === 'me', 'message receiver': message.sender !== 'me'}">
+      <span>{{ message.text }}</span>
+      <!-- <div class="timestamp">{{ message.timestamp | date:'mediumTime' }}</div> -->
+    </div>
+  </div>
+  

@@ -1,0 +1,32 @@
+/* message-list.component.css */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .message {
+    max-width: 70%; /* Adjust as needed */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+  }
+  
+  .sender {
+    align-self: flex-end;
+    background-color: #dcf8c6; /* Sender's background color */
+  }
+  
+  .receiver {
+    align-self: flex-start;
+    background-color: #ffffff; /* Receiver's background color */
+  }
+  
+  .timestamp {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 5px;
+    align-self: flex-end; /* Align timestamp to the end within the flex container */
+  }
+  
