@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "ConvoSense"
+  "defaultProject": "ConvoSense",
+  "cli": {
+    "analytics": false
+  }
 }

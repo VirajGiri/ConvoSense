@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Component, OnDestroy } from '@angular/core';
 import { TextToSpeechService } from '../text-to-speech.service';
 
 @Component({
@@ -10,7 +11,11 @@ export class TextToSpeechComponent implements OnDestroy {
 
   textToSpeak: string = '';
 
-  constructor(private textToSpeechService: TextToSpeechService) {}
+  constructor(private textToSpeechService: TextToSpeechService) {
+    this.textToSpeechService.addCommand('hello', () => {
+      alert('Hello! Speech recognized.');
+    });
+  }
 
   speak(): void {
     if (this.textToSpeak) {

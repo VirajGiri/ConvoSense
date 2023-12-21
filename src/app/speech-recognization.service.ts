@@ -1,38 +1,26 @@
-import { EventEmitter, Injectable } from "@angular/core";
+// speech-recognition.service.ts
+import { Injectable, EventEmitter } from '@angular/core';
+
 declare const annyang: any;
+
 @Injectable({
   providedIn: 'root'
 })
-export class TextToSpeechService {
-  public speechRecognized: EventEmitter<string> = new EventEmitter();
-  private synthesis: SpeechSynthesis;
+export class SpeechRecognitionService {
+  speechRecognized: EventEmitter<string> = new EventEmitter();
 
-  constructor(
-  ) {
-    this.synthesis = window.speechSynthesis;
-
+  constructor() {
     if (annyang) {
       annyang.addCallback('result', (phrases: string[]) => {
         if (phrases && phrases.length > 0) {
-          console.log("phrases:",phrases);
           this.speechRecognized.emit(phrases[0]);
         }
       });
     }
   }
 
-  speak(text: string): void {
-    const utterance = new SpeechSynthesisUtterance(text);
-    this.synthesis.speak(utterance);
-  }
-
-  cancel(): void {
-    this.synthesis.cancel();
-  }
-
   startListening(): void {
     if (annyang) {
-      // Add your speech recognition commands here
       annyang.start();
     }
   }

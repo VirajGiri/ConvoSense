@@ -17,6 +17,7 @@ import { ChatComponent } from './chat/chat.component';
 import { MessageListComponent } from './message-list/message-list.component';
 import { MessageInputComponent } from './message-input/message-input.component';
 import { TextToSpeechComponent } from './text-to-speech/text-to-speech.component';
+import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TextToSpeechComponent } from './text-to-speech/text-to-speech.component
     ChatComponent,
     MessageListComponent,
     MessageInputComponent,
-    TextToSpeechComponent
+    TextToSpeechComponent,
+    SpeechToTextComponent
   ],
   imports: [
     BrowserModule,
